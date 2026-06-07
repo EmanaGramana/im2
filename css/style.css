@@ -4,9 +4,7 @@
   font-display: swap;
 }
 
-/* =========================================
-   BASE VARIABLES (Default / Green Theme)
-   ========================================= */
+/* BASE VARIABLES (Default)*/
 :root {
   --bg-gradient:          linear-gradient(135deg, #e8f5e9, #c8e6c9);
   --text-color:           #2e3d2f;
@@ -26,9 +24,7 @@
   --navbar-height:        60px;
 }
 
-/* =========================================
-   GLOBAL RESET
-   ========================================= */
+/* GLOBAL RESET*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -50,9 +46,7 @@ body {
   transition: background 0.8s ease, color 0.6s ease;
 }
 
-/* =========================================
-   WEATHER GIF — fixed fullscreen background
-   ========================================= */
+/*  WEATHER GIF — fixed fullscreen background*/
 .gif {
   position: fixed;
   top: 0;
@@ -68,9 +62,7 @@ body {
   opacity: 0.45;
 }
 
-/* =========================================
-   LOTTIE DECORATION — fixed corner animation
-   ========================================= */
+/* LOTTIE DECORATION — fixed corner animation*/
 .lottie-decoration {
   position: fixed;
   bottom: -11%;
@@ -88,9 +80,7 @@ body {
   opacity: 1;
 }
 
-/* =========================================
-   NAVBAR
-   ========================================= */
+/*NAVBAR*/
 .navbar {
   position: fixed;
   top: 0;
@@ -118,7 +108,7 @@ body {
   gap: 0.5rem;
 }
 
-/* Controls wrapper — refresh + city select together */
+/* Controls wrapper*/
 .nav-controls {
   display: flex;
   align-items: center;
@@ -185,9 +175,7 @@ body {
   transition: background 0.6s ease, color 0.6s ease;
 }
 
-/* =========================================
-   REFRESH BUTTON
-   ========================================= */
+/*REFRESH BUTTON*/
 .nav-refresh-btn {
   background: var(--select-bg);
   border: 2px solid var(--select-border);
@@ -226,9 +214,7 @@ body {
   to   { transform: rotate(360deg); }
 }
 
-/* =========================================
-   MAIN CONTENT — above gif layer
-   ========================================= */
+/*MAIN CONTENT */
 .main-content {
   flex: 1;
   display: flex;
@@ -240,9 +226,7 @@ body {
   z-index: 1;
 }
 
-/* =========================================
-   LOGO — centered above title
-   ========================================= */
+/* LOGO */
 .logo {
   background: var(--logo-img);
   background-size: contain;
@@ -254,9 +238,7 @@ body {
   transition: background-image 0.6s ease;
 }
 
-/* =========================================
-   WEATHER TITLE — floating beneath logo
-   ========================================= */
+/*WEATHER TITLE*/
 .weather-title {
   color: var(--heading-color);
   font-size: 2rem;
@@ -272,9 +254,7 @@ body {
               box-shadow 0.6s ease;
 }
 
-/* =========================================
-   MAIN CONTAINER
-   ========================================= */
+/* MAIN CONTAINER*/
 .container {
   background: var(--card-bg);
   max-width: 500px;
@@ -285,9 +265,7 @@ body {
   transition: background 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* =========================================
-   CARDS
-   ========================================= */
+/* CARDS*/
 .card {
   padding: 1.2rem;
   border-radius: 12px;
@@ -326,9 +304,7 @@ body {
   font-style: italic;
 }
 
-/* =========================================
-   TEST PANEL — above gif layer
-   ========================================= */
+/* TEST PANEL */
 #test-panel {
   display: none;
   margin-top: 1.5rem;
@@ -383,9 +359,7 @@ body {
   opacity: 1;
 }
 
-/* =========================================
-   WEATHER THEMES
-   ========================================= */
+/* WEATHER THEMES*/
 body.weather-clear {
   --bg-gradient:          linear-gradient(135deg, #fff9c4, #ffecb3);
   --text-color:           #5d4037;
@@ -400,7 +374,6 @@ body.weather-clear {
   --select-border:        #ffe082;
   --navbar-bg:            rgba(255, 249, 196, 0.95);
   --logo-img:             url("../img/channe_f57f17.svg");
-  --weather-gif:          url("../img/gifs/sunnig.gif");
 }
 
 body.weather-partly-cloudy {
@@ -488,9 +461,7 @@ body.weather-snow {
   --weather-gif:          url("../img/gifs/snow.gif");
 }
 
-/* =========================================
-   RESPONSIVE — Tablet landscape
-   ========================================= */
+/* RESPONSIVE — Tablet landscape*/
 @media (max-width: 900px) {
   :root {
     --navbar-height: 100px;
@@ -544,15 +515,13 @@ body.weather-snow {
 
   .lottie-decoration {
     bottom: -12%;
-    left: -4%;
+    left: -1%;
     width: clamp(300px, 40vw, 550px);
     height: clamp(380px, 55vh, 700px);
   }
 }
 
-/* =========================================
-   RESPONSIVE — Large phone
-   ========================================= */
+/* RESPONSIVE — Large phone*/
 @media (max-width: 560px) {
   :root {
     --navbar-height: 110px;
@@ -596,15 +565,13 @@ body.weather-snow {
 
   .lottie-decoration {
     bottom: -10%;
-    left: -3%;
+    left: -1%;
     width: clamp(260px, 38vw, 450px);
     height: clamp(340px, 50vh, 600px);
   }
 }
 
-/* =========================================
-   RESPONSIVE — Standard phone
-   ========================================= */
+/* RESPONSIVE — Standard phone*/
 @media (max-width: 480px) {
   :root {
     --navbar-height: 120px;
@@ -678,15 +645,13 @@ body.weather-snow {
 
   .lottie-decoration {
     bottom: -12%;
-    left: -3%;
+    left: -1%;
     width: clamp(220px, 35vw, 380px);
     height: clamp(280px, 45vh, 500px);
   }
 }
 
-/* =========================================
-   RESPONSIVE — Small phone
-   ========================================= */
+/* RESPONSIVE — Small phone*/
 @media (max-width: 360px) {
   :root {
     --navbar-height: 130px;

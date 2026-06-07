@@ -14,7 +14,7 @@ let currentRequestId = 0;
 
 const dropdown = document.getElementById("city-select");
 
-// --- API URL ---
+//  API URL 
 function buildApiUrl(city) {
   return "https://api.open-meteo.com/v1/forecast"
     + "?latitude="  + city.latitude
@@ -22,7 +22,7 @@ function buildApiUrl(city) {
     + "&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,rain";
 }
 
-// --- WMO CODE TO BASIC WEATHER ---
+//  WMO CODE TO BASIC WEATHER 
 function getBasicWeather(weatherCode) {
   if (weatherCode === 0 || weatherCode === 1)                            return "Es isch sunnig";
   if (weatherCode === 2)                                                  return "Es isch chle bewölkt";
@@ -33,7 +33,7 @@ function getBasicWeather(weatherCode) {
   return "Weiss ni bro, lug seuber usem Fänster:)";
 }
 
-// --- PLANT WATERING ADVICE ---
+//  PLANT WATERING ADVICE 
 function getPlantAdvice(basicWeather, temp, humidity, windSpeed) {
   if (basicWeather === "Es isch sunnig") {
     if (temp < 0)       return "Ke Wasser gä. Dr Bodä isch gfrohre. Schütz dini Pflanzä vorem Frost.";
@@ -74,7 +74,7 @@ function getPlantAdvice(basicWeather, temp, humidity, windSpeed) {
   return "Bro bruch dini Fingerli u lug säuber öb dr Härd troche isch, wenn ja de gisch däm armä Pflänzli chle Wasser!:)";
 }
 
-// --- THEME UPDATER ---
+//  THEME UPDATER 
 function updateWeatherTheme(basicWeather) {
   const classMap = {
     "Es isch sunnig":       "weather-clear",
@@ -97,7 +97,7 @@ function updateWeatherTheme(basicWeather) {
   updateLottieAnimation(themeClass);
 }
 
-// --- UPDATE NAVBAR WEATHER STATS ---
+//  UPDATE NAVBAR WEATHER STATS 
 function updateNavWeather(temp, humidity, wind, rain) {
   document.getElementById("stat-temp").textContent     = `Temperatur: ${temp}°C`;
   document.getElementById("stat-humidity").textContent = `Luftfüechtigkeit: ${humidity}%`;
@@ -105,7 +105,7 @@ function updateNavWeather(temp, humidity, wind, rain) {
   document.getElementById("stat-rain").textContent     = `Räge: ${rain} mm`;
 }
 
-// --- FETCH & DISPLAY WEATHER ---
+//  FETCH & DISPLAY WEATHER 
 function fetchWeather(cityKey) {
   const requestId = ++currentRequestId;
   const city = cities[cityKey];
@@ -165,7 +165,7 @@ function fetchWeather(cityKey) {
     });
 }
 
-// --- REFRESH WEATHER (keeps current city) ---
+// REFRESH WEATHER
 function refreshWeather() {
   if (isTestMode) {
     isTestMode = false;
@@ -175,7 +175,7 @@ function refreshWeather() {
   fetchWeather(dropdown.value);
 }
 
-// --- EVENT LISTENERS & INITIALIZATION ---
+// EVENT LISTENERS & INITIALIZATION
 dropdown.addEventListener("change", function() {
   if (!isTestMode) fetchWeather(dropdown.value);
 });
@@ -231,9 +231,8 @@ function simulateWeather(basicWeather) {
   `;
 }
 
-// =============================================
+
 //  LOTTIE ANIMATION SETUP
-// =============================================
 
 // Animation file paths for each theme
 const lottieAnimations = {
@@ -268,7 +267,7 @@ function updateLottieAnimation(themeClass) {
     return;
   }
 
-  // If already showing the correct animation, do nothing
+  // If showing the correct animation, do nothing
   if (currentLottieTheme === themeClass) return;
 
   // Destroy previous animation if exists
