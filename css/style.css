@@ -374,6 +374,7 @@ body.weather-clear {
   --select-border:        #ffe082;
   --navbar-bg:            rgba(255, 249, 196, 0.95);
   --logo-img:             url("../img/channe_f57f17.svg");
+  --weather-gif:          url("../img/gifs/sunnig.gif");
 }
 
 body.weather-partly-cloudy {
