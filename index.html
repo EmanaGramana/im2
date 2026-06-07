@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPRÜTZCHANNÄ</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!--  NAVBAR  -->
+  <nav class="navbar">
+    <div class="nav-right">
+      <div id="nav-weather" class="nav-weather">
+        <span class="weather-stat" id="stat-temp">Temperatur: --°C</span>
+        <span class="weather-stat" id="stat-humidity">Luftfüechtigkeit: --%</span>
+        <span class="weather-stat" id="stat-wind">Wind: -- km/h</span>
+        <span class="weather-stat" id="stat-rain">Räge: -- mm</span>
+      </div>
+      <div class="nav-controls">
+        <button id="refresh-btn" class="nav-refresh-btn" onclick="refreshWeather()" title="reload">&#8634;</button>
+        <div class="nav-city-select">
+          <label for="city-select">Stadt:</label>
+          <select id="city-select">
+            <option value="bern">Bärn</option>
+            <option value="zurich">Züri</option>
+            <option value="basel">Basu</option>
+            <option value="geneva">Gänf</option>
+            <option value="lausanne">Losanne</option>
+            <option value="lucerne">Luzärn</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!--  WEATHER GIF BACKGROUND  -->
+  <div class="gif"></div>
+
+  <!--  LOTTIE FLOWER ANIMATION  -->
+  <div id="lottie-flower" class="lottie-decoration"></div>
+
+  <!--  MAIN CONTENT  -->
+  <main class="main-content">
+    <div class="logo"></div>
+    <h2 id="weather-display" class="weather-title">Z'Wätter ladet..</h2>
+    <div class="container">
+      <div id="plant-advice" class="card advice-card">
+        <p class="loading">Vorschlag ladet...</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- TEST PANEL -->
+  <div id="test-panel">
+    <h3>Dev Mode</h3>
+    <div class="test-buttons">
+      <button onclick="simulateWeather('Es isch sunnig')">Clear</button>
+      <button onclick="simulateWeather('Es isch chle bewölkt')">Partly Cloudy</button>
+      <button onclick="simulateWeather('Es isch Bewölkt')">Cloudy</button>
+      <button onclick="simulateWeather('Es rägnet')">Rain</button>
+      <button onclick="simulateWeather('Es isch am tue')">Storm</button>
+      <button onclick="simulateWeather('Es schneeielet')">Snow</button>
+    </div>
+    <button class="return-live-btn" onclick="returnToLive()">🔄 Return to Live Data</button>
+  </div>
+
+  <button id="open-test-btn" style="display:none" onclick="openTestPanel()">Test Themes</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script src="/js/weather.js"></script>
+</body>
+</html>
